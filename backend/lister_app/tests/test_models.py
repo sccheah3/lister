@@ -25,8 +25,8 @@ class ListModelTest(TestCase):
 									 detail="Need to get to work in San Jose every morning by 9am.")
 
 		list_2 = List.objects.create(parent_list=list_1,
-									 title="Go to the gym",
-									 detail="Goal is to gain to 175 lbs.")
+									 title="Pack lunch.",
+									 detail="Usually leftovers from dinner the night before.")
 
 		task = List.objects.all()[0].tasks.all()[0]
 
