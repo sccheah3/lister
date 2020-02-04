@@ -9,3 +9,7 @@ class List(models.Model):
 
 	modified_at = models.DateTimeField(auto_now=True)
 	created_at = models.DateTimeField(auto_now_add=True)
+
+
+	def __str__(self):
+		return self.title
