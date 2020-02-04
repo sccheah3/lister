@@ -28,7 +28,7 @@ class ListHome extends Component {
     render() {
         return (
             <ul>
-                { this.state.lists.map(list => <li>{ list.url }</li>)}
+                { this.state.lists.map(list => <li key={list.title}>{list.title}</li>)}
             </ul>
         )
     }
