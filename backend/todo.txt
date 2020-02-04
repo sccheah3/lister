@@ -1,0 +1,2 @@
+1. Write tests for API
+2. Write frontend react
