@@ -4,6 +4,7 @@ from lister_app.models import List
 
 
 class ListSerializer(serializers.HyperlinkedModelSerializer):
+	parent_list = serializers.HyperlinkedRelatedField(view_name="list-detail", queryset=List.objects.all(), required=False)
 
 	class Meta:
 		model = List
