@@ -1,2 +1,9 @@
 1. Write tests for API
 2. Write frontend react
+
+
+# can filter with queries:
+	#	filter_set: http://127.0.0.1:8000/api/lists/?is_root=True
+	#				http://127.0.0.1:8000/api/lists/?title=title
+	#	search_field: http://127.0.0.1:8000/api/lists/?search=title
+	#				  http://127.0.0.1:8000/api/lists/?search=this%20is%20a
