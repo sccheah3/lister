@@ -1,3 +1,5 @@
+Implement feature to prevent cycling from parent to child lists
+
 1. Write tests for API
 2. Write frontend react
 
