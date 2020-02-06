@@ -9,6 +9,7 @@ class ListSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'id', 'parent_list', 'title', 'detail', 'tasks', 'is_complete', 'modified_at']
 
 
+	# serialize nested relations
     def get_fields(self):
         fields = super(ListSerializer, self).get_fields()
         fields['tasks'] = ListSerializer(many=True, required=False)
