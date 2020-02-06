@@ -5,6 +5,7 @@ from lister_app.models import List
 
 from django_filters.rest_framework import DjangoFilterBackend
 import django_filters
+from rest_framework import filters
 
 
 class ListFilter(django_filters.FilterSet):
@@ -18,6 +19,6 @@ class ListViewSet(viewsets.ModelViewSet):
 	serializer_class = ListSerializer
 	queryset = List.objects.all()
 
-	# filter_backends = [DjangoFilterBackend]
-	#filterset_fields = ['parent_list', 'title']
+	filter_backends = [DjangoFilterBackend, filters.SearchFilter]
 	filterset_class = ListFilter
+	search_fields = ['title', 'detail']
