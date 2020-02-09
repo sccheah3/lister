@@ -1,5 +1,9 @@
 1. be able to post new list/sublist at each step
+    - need to figure out how to reload components...
+    -read up promises, axios, setstate, asynchronous/synchronous
+        https://stackoverflow.com/questions/54261535/cant-get-react-component-to-update-after-setting-state-after-axios-call
 
+2. eventually add batch add/delete/edits and save button instead of constantly posting/getting for each item
 
 Note: able to make request with filter with "http://127.0.0.1:8000/api/lists/?title=title2"
     Need to find out how to filter by null for parent_list. Also see if we can have multiple filters on single view
