@@ -23,7 +23,7 @@ class ListHome extends Component {
 
     getLists = () => {
         axios.get(LIST_API_URL + "?is_root=true").then(res => this.setState({ lists: res.data }));
-        console.log("here!")
+        console.log(this.state.lists)
     };
 
     resetState = () => {
@@ -32,11 +32,11 @@ class ListHome extends Component {
 
 
     render() {
-        console.log(this.state.lists)
+        console.log("here")
         return (
             <ul>
                 { this.state.lists.map(list =>
-                    <li key={list.title}>{list.title} <ListItem list={list} /></li>
+                    <li key={list.title}>{list.title} <ListItem list={list} resetState={this.resetState}/></li>
                 )}
                 <li><NewListItemForm resetState={this.resetState}/></li>
             </ul>

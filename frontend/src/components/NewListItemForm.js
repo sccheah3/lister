@@ -9,7 +9,7 @@ class NewListItemForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            parent: '',
+            parent_list: this.props.parent_url,
             title: '',
             detail: '',
         }
@@ -22,6 +22,7 @@ class NewListItemForm extends Component {
     postList = () => {
         axios.post(LIST_API_URL, this.state)
              .then(res => console.log(res))
+             .then(() => this.props.resetState())
              .catch(err => console.log(err));
     };
 
