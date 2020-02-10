@@ -17,8 +17,9 @@ class ListItem extends Component {
     }
 
     getLists = () => {
-        axios.get(LIST_API_URL + this.state.list.id + "/").then(res => this.setState({ list: res.data }));
-        console.log(this.state.list)
+        axios.get(LIST_API_URL + this.state.list.id + "/")
+             .then(res => this.setState({ list: res.data }))
+             .catch(err => console.log(err));
     };
 
     resetState = () => {

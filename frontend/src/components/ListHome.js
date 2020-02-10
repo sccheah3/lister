@@ -22,8 +22,9 @@ class ListHome extends Component {
     }
 
     getLists = () => {
-        axios.get(LIST_API_URL + "?is_root=true").then(res => this.setState({ lists: res.data }));
-        //console.log(this.state.lists)
+        axios.get(LIST_API_URL + "?is_root=true")
+             .then(res => this.setState({ lists: res.data }))
+             .catch(err => console.log(err));
     };
 
     resetState = () => {
@@ -32,7 +33,6 @@ class ListHome extends Component {
 
 
     render() {
-        console.log("here")
         return (
             <ul>
                 { this.state.lists.map(list =>
