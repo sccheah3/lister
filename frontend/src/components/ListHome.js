@@ -23,7 +23,7 @@ class ListHome extends Component {
 
     getLists = () => {
         axios.get(LIST_API_URL + "?is_root=true").then(res => this.setState({ lists: res.data }));
-        console.log(this.state.lists)
+        //console.log(this.state.lists)
     };
 
     resetState = () => {
