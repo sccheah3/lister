@@ -1,41 +1,38 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
 import axios from "axios";
 import { LIST_API_URL } from "../constants/urls";
-
 import NewListItemForm from "./NewListItemForm";
 
+import "./List.css"
 
-class ListItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            list: this.props.list,
-        }
+const ListItem = (props) => {
 
-        this.resetState = this.resetState.bind(this);
-    }
+    const [list, setList] = useState(props.list)
 
-    getLists = () => {
-        axios.get(LIST_API_URL + this.state.list.id + "/")
-             .then(res => this.setState({ list: res.data }))
+    function getLists() {
+        axios.get(LIST_API_URL + list.id + "/")
+             .then(res => setList(res.data ))
              .catch(err => console.log(err));
     };
 
-    resetState = () => {
-        this.getLists();
-    };
-
-    render() {
-        return (
-            <ul>
-                { this.state.list.tasks.map(list =>
-                    <li key={list.title}>{list.title} <ListItem list={list} resetState={this.resetState}/></li>
-                )}
-                <li><NewListItemForm parent_url={this.state.list.url} resetState={this.resetState}/></li>
-            </ul>
-        )
+    function resetState() {
+        getLists();
     }
+
+
+    return (
+        <ul>
+            { list.tasks.map(list =>
+                <li key={list.id}>{list.title}<ListItem list={list}/></li>
+            )}
+            <li><NewListItemForm parent_url={list.url} resetState={resetState}/></li>
+        </ul>
+    )
 }
 
 export default ListItem;
+
+
+
+

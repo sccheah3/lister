@@ -44,8 +44,8 @@ class NewListItemForm extends Component {
         return (
             <form onSubmit={this.handleSubmit}>
                 <input type="text" name="title" value={this.state.title} onChange={this.handleChange} placeholder="Title"/><br/>
-                <input type="text" name="detail" value={this.state.detail} onChange={this.handleChange} placeholder="Detail"/><br/>
-                <input type="submit" value="Submit"/>
+                <textarea name="detail" rows="3" cols="33" value={this.state.detail} onChange={this.handleChange} placeholder="Detail"></textarea><br/>
+                <input type="submit" value="add"/>
             </form>
         )
     }

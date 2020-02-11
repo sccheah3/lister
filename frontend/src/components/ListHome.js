@@ -1,47 +1,40 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import { LIST_API_URL } from "../constants/urls";
 import ListItem from "./ListItem";
 import NewListItemForm from "./NewListItemForm";
 
+import "./List.css"
 
-class ListHome extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            lists: [],
-        }
+const ListHome = (props) => {
 
-        this.resetState = this.resetState.bind(this);
-        this.getLists = this.getLists.bind(this);
-    }
+    const [lists, setList] = useState([])
 
-    componentDidMount() {
-        this.resetState();
-    }
-
-    getLists = () => {
+    function getLists() {
         axios.get(LIST_API_URL + "?is_root=true")
-             .then(res => this.setState({ lists: res.data }))
+             .then(res => setList(res.data))
              .catch(err => console.log(err));
     };
 
-    resetState = () => {
-        this.getLists();
+    function resetState() {
+        getLists();
     };
 
+    useEffect(() => getLists(), []);
 
-    render() {
-        return (
-            <ul>
-                { this.state.lists.map(list =>
-                    <li key={list.title}>{list.title} <ListItem list={list} resetState={this.resetState}/></li>
-                )}
-                <li><NewListItemForm resetState={this.resetState}/></li>
-            </ul>
-        )
-    }
+
+    return (
+        <ul>
+            { lists.map(list =>
+                <li key={list.id}>{list.title}<ListItem list={list}/></li>
+            )}
+            <li><NewListItemForm resetState={resetState}/></li>
+        </ul>
+    );
 }
 
 export default ListHome;
+
+
+
