@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Fragment } from "react";
+import { UncontrolledCollapse, Button } from "reactstrap";
 
 import axios from "axios";
 import { LIST_API_URL } from "../constants/urls";
@@ -25,12 +26,20 @@ const ListHome = (props) => {
 
 
     return (
-        <ul>
-            { lists.map(list =>
-                <li key={list.id}>{list.title}<ListItem list={list}/></li>
-            )}
-            <li><NewListItemForm resetState={resetState}/></li>
-        </ul>
+        <div>
+            <ul>
+                { lists.map(list =>
+                    <Fragment>
+                    <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>{list.title}</Button>
+                    <UncontrolledCollapse toggler={"#toggler"+list.id}>
+                        <li key={list.id}><ListItem list={list}/></li>
+                    </UncontrolledCollapse>
+                    <br />
+                    </Fragment>
+                )}
+                <li><NewListItemForm resetState={resetState}/></li>
+            </ul>
+        </div>
     );
 }
 
