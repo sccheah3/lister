@@ -26,20 +26,20 @@ const ListHome = (props) => {
 
 
     return (
-        <div>
-            <ul>
-                { lists.map(list =>
-                    <Fragment>
+        <ul>
+            { lists.map(list =>
+            <Fragment key={list.id}>
+                <li>
                     <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>{list.title}</Button>
                     <UncontrolledCollapse toggler={"#toggler"+list.id}>
-                        <li key={list.id}><ListItem list={list}/></li>
+                        <ListItem list={list}/>
                     </UncontrolledCollapse>
-                    <br />
-                    </Fragment>
-                )}
-                <li><NewListItemForm resetState={resetState}/></li>
-            </ul>
-        </div>
+                </li>
+                <br />
+            </Fragment>
+            )}
+            <li><NewListItemForm resetState={resetState}/></li>
+        </ul>
     );
 }
 

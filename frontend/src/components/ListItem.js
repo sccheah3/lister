@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from "react";
+import React, { useState, Fragment } from "react";
 import { UncontrolledCollapse, Button } from "reactstrap";
 
 import axios from "axios";
@@ -24,14 +24,17 @@ const ListItem = (props) => {
 
     return (
         <ul>
+        <br/>
             { list.tasks.map(list =>
-                <Fragment>
-                <Button color="primary" id={"toggler"+list.id} style={{ marginBotton: '1rem' }}>{list.title}</Button>
-                <UncontrolledCollapse toggler={"#toggler"+list.id}>
-                    <li key={list.id}><ListItem list={list}/></li>
-                </UncontrolledCollapse>
-                <br />
-                </Fragment>
+            <Fragment key={list.id}>
+                <li>
+                    <Button color="primary" id={"toggler"+list.id} style={{ marginBotton: '1rem' }}>{list.title}</Button>
+                    <UncontrolledCollapse toggler={"#toggler"+list.id}>
+                        <ListItem list={list}/>
+                    </UncontrolledCollapse>
+                </li>
+                <br/ >
+            </Fragment>
             )}
             <li><NewListItemForm parent_url={list.url} resetState={resetState}/></li>
         </ul>
