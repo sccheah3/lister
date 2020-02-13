@@ -1,7 +1,7 @@
-1. use collapsible list on elements (reactstrap collapse?)
-    - use hooks, needs to change to function components
-    -read up promises, axios, setstate, asynchronous/synchronous
+
+-read up promises, axios, setstate, asynchronous/synchronous
         https://stackoverflow.com/questions/54261535/cant-get-react-component-to-update-after-setting-state-after-axios-call
+-hooks
 
 2. eventually add batch add/delete/edits and save button instead of constantly posting/getting for each item
 

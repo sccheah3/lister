@@ -1,4 +1,7 @@
-Implement feature to prevent cycling from parent to child lists
+1. user auth
+2. list grouping/categories
+
+Implement feature to prevent cycling from parent to child lists -- done
 
 1. Write tests for API
 2. Write frontend react
