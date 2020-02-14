@@ -1,4 +1,5 @@
-
+0. auth
+1. add functionality to add parent
 -read up promises, axios, setstate, asynchronous/synchronous
         https://stackoverflow.com/questions/54261535/cant-get-react-component-to-update-after-setting-state-after-axios-call
 -hooks

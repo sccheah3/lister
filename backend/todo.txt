@@ -1,5 +1,4 @@
-1. user auth
-2. list grouping/categories
+1. authentication
 
 Implement feature to prevent cycling from parent to child lists -- done
 
