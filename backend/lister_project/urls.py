@@ -6,5 +6,6 @@ urlpatterns = [
     path('lister/', include('lister_app.urls')),
     path('accounts/', include('accounts_app.urls')),
     path('api-auth/', include('rest_framework.urls')),
+    path('api/auth/', include('knox.urls')),
     path('admin/', admin.site.urls),
 ]
