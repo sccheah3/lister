@@ -20,7 +20,7 @@ class NewListItemForm extends Component {
     }
 
     postList = () => {
-        axios.post(LIST_API_URL, this.state)
+        axios.post(LIST_API_URL, this.state, { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
              .then(res => console.log(res))
              .then(() => this.props.resetState())
              .catch(err => console.log(err));

@@ -12,7 +12,7 @@ const ListItem = (props) => {
     const [list, setList] = useState(props.list)
 
     function getLists() {
-        axios.get(LIST_API_URL + list.id + "/")
+        axios.get(LIST_API_URL + list.id + "/", { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
              .then(res => setList(res.data ))
              .catch(err => console.log(err));
     };
