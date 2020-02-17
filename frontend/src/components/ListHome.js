@@ -12,6 +12,7 @@ const ListHome = (props) => {
 
     const [lists, setList] = useState([])
 
+    console.log(localStorage.getItem('tokens'));
 //JSON.parse(localStorage.getItem('tokens'))['token']
     function getLists() {
         axios.get(LIST_API_URL + "?is_root=true", { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})

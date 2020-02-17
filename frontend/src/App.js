@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
-import Home from "./pages/Home";
+//import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 
 import PrivateRoute from "./pages/PrivateRoute";
@@ -15,8 +15,10 @@ import ListHome from "./components/ListHome";
 
 function App(props) {
 
-    const [authTokens, setAuthTokens] = useState(localStorage.getItem('tokens'));
+    const [authTokens, setAuthTokens] = useState(localStorage.getItem('authTokens') || '');
 
+    console.log(authTokens);
+    console.log(localStorage);
     const setTokens = (data) => {
         localStorage.setItem("tokens", JSON.stringify(data));
         setAuthTokens(data);

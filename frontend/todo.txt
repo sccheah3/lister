@@ -1,4 +1,4 @@
-0. auth
+0. auth - fix Login.js for renderer in new state during refresh
 1. add functionality to add parent, editing and deleting functionality
 2. eventually add batch add/delete/edits and save button instead of constantly posting/getting for each item
 
