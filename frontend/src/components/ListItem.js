@@ -25,6 +25,8 @@ const ListItem = (props) => {
     return (
         <ul>
         <br/>
+            <li><NewListItemForm parent_url={list.url} resetState={resetState}/></li>
+            <br />
             { list.tasks.map(list =>
             <Fragment key={list.id}>
                 <li>
@@ -36,7 +38,6 @@ const ListItem = (props) => {
                 <br/ >
             </Fragment>
             )}
-            <li><NewListItemForm parent_url={list.url} resetState={resetState}/></li>
         </ul>
     )
 }

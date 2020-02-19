@@ -28,6 +28,8 @@ const ListHome = (props) => {
 
     return (
         <ul>
+            <li><NewListItemForm resetState={resetState}/></li>
+            <br />
             { lists.map(list =>
             <Fragment key={list.id}>
                 <li>
@@ -36,10 +38,9 @@ const ListHome = (props) => {
                         <ListItem list={list}/>
                     </UncontrolledCollapse>
                 </li>
-                <br />
             </Fragment>
             )}
-            <li><NewListItemForm resetState={resetState}/></li>
+
         </ul>
     );
 }

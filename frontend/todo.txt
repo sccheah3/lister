@@ -1,5 +1,5 @@
-0. auth - fix Login.js for renderer in new state during refresh
 1. add functionality to add parent, editing and deleting functionality
+    - add views to see all, completed, and active lists
 2. eventually add batch add/delete/edits and save button instead of constantly posting/getting for each item
 
 -read up promises, axios, setstate, asynchronous/synchronous
