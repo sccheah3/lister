@@ -12,6 +12,8 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import ListHome from "./components/ListHome";
 
+import Todo from "./components/Todo";
+
 
 function App(props) {
 
@@ -34,10 +36,14 @@ function App(props) {
                         <Link to="/">Lists</Link>
                     </li>
                     <li>
+                        <Link to="/todo">Todo</Link>
+                    </li>
+                    <li>
                         <Link to="/admin">Admin Page</Link>
                     </li>
                 </ul>
                 <PrivateRoute exact path="/" component={ListHome} />
+                <PrivateRoute path="/todo" component={Todo} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
                 <PrivateRoute path="/admin" component={Admin} />
