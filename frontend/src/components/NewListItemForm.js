@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import { LIST_API_URL } from "../constants/urls";
+import "./List.css";
 
 
 class NewListItemForm extends Component {
@@ -11,7 +12,6 @@ class NewListItemForm extends Component {
         this.state = {
             parent_list: this.props.parent_url,
             title: '',
-            detail: '',
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -35,7 +35,6 @@ class NewListItemForm extends Component {
         this.setState({
             parent: '',
             title: '',
-            detail: '',
         });
         event.preventDefault();
     }
@@ -43,8 +42,7 @@ class NewListItemForm extends Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
-                <input type="text" name="title" value={this.state.title} onChange={this.handleChange} placeholder="Title"/>
-                <input type="submit" value="add"/>
+                <input type="text" className="input" name="title" value={this.state.title} onChange={this.handleChange} placeholder="Add a new task"/>
             </form>
         )
     }

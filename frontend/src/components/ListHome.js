@@ -28,19 +28,22 @@ const ListHome = (props) => {
 
     return (
         <ul>
-            <li><NewListItemForm resetState={resetState}/></li>
-            <br />
-            { lists.map(list =>
-            <Fragment key={list.id}>
-                <li>
-                    <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>{list.title}</Button>
-                    <UncontrolledCollapse toggler={"#toggler"+list.id}>
-                        <ListItem list={list}/>
-                    </UncontrolledCollapse>
-                </li>
-            </Fragment>
-            )}
-
+            <div className="todo-container">
+                <li><NewListItemForm resetState={resetState}/></li>
+                { lists.map(list =>
+                <Fragment key={list.id}>
+                    <li>
+                        <div className="task">
+                            {list.title}
+                            <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>Expand</Button>
+                            <UncontrolledCollapse toggler={"#toggler"+list.id}>
+                                <ListItem list={list}/>
+                            </UncontrolledCollapse>
+                        </div>
+                    </li>
+                </Fragment>
+                )}
+            </div>
         </ul>
     );
 }

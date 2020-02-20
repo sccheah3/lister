@@ -24,20 +24,22 @@ const ListItem = (props) => {
 
     return (
         <ul>
-        <br/>
-            <li><NewListItemForm parent_url={list.url} resetState={resetState}/></li>
-            <br />
-            { list.tasks.map(list =>
-            <Fragment key={list.id}>
-                <li>
-                    <Button color="primary" id={"toggler"+list.id} style={{ marginBotton: '1rem' }}>{list.title}</Button>
-                    <UncontrolledCollapse toggler={"#toggler"+list.id}>
-                        <ListItem list={list}/>
-                    </UncontrolledCollapse>
-                </li>
-                <br/ >
-            </Fragment>
-            )}
+            <div className="todo-container-nested">
+                <li><NewListItemForm parent_url={list.url} resetState={resetState}/></li>
+                { list.tasks.map(list =>
+                <Fragment key={list.id}>
+                    <li>
+                        <div className="task">
+                            {list.title}
+                            <Button color="primary" id={"toggler"+list.id} style={{ marginBotton: '1rem' }}>Expand</Button>
+                            <UncontrolledCollapse toggler={"#toggler"+list.id}>
+                                <ListItem list={list}/>
+                            </UncontrolledCollapse>
+                        </div>
+                    </li>
+                </Fragment>
+                )}
+            </div>
         </ul>
     )
 }

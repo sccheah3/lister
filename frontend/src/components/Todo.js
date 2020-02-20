@@ -80,7 +80,7 @@ function Todo() {
         <div className="todo-container">
             <div className="header">Pending tasks ({tasksRemaining})</div>
             <div className="header">TODO - ITEMS</div>
-            <div className="tasks">
+            <div>
                 {tasks.map((task, index) => (
                     <Task
                         task={task}
