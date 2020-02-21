@@ -35,6 +35,7 @@ const ListHome = (props) => {
                     <li>
                         <div className="task">
                             {list.title}
+                            <Button color="danger">Delete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>Expand</Button>
                             <UncontrolledCollapse toggler={"#toggler"+list.id}>
                                 <ListItem list={list}/>

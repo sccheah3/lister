@@ -12,6 +12,15 @@ body {
       border: 3px solid rgb(36, 110, 194);
     }
 
+    .todo-container-nested {
+      background: rgb(41, 33, 33);
+      width: 40vw;
+      border-radius: 15px;
+      padding: 20px 10px;
+      color: white;
+      border: 3px solid rgb(36, 110, 194);
+    }
+
     .task {
       border: 1px solid white;
       border-radius: 5px;
@@ -20,7 +29,6 @@ body {
     }
 
     .task button{
-      background: rgb(12, 124, 251);
       border-radius: 5px;
       margin: 0px 5px;
       padding: 3px 5px;
