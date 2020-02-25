@@ -29,6 +29,13 @@ const ListHome = (props) => {
             .catch(err => console.log(err));
     }
 
+    function completeTask(list) {
+        list["is_complete"] = !list.is_complete
+        axios.put(list.url, list, { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
+             .then(res => console.log(res))
+             .then(() => resetState())
+             .catch(err => console.log(err));
+    }
 
 
     useEffect(() => getLists(), []);
@@ -41,9 +48,10 @@ const ListHome = (props) => {
                 { lists.map(list =>
                 <Fragment key={list.id}>
                     <li>
-                        <div className="task">
+                        <div className="task" style={{ textDecoration: list.is_complete ? "line-through" : ""}}>
                             {list.title}
                             <Button color="danger" onClick={() => deleteList(list.url)}>Delete</Button>
+                            <Button color="primary" onClick={() => completeTask(list)}>Complete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>Expand</Button>
                             <UncontrolledCollapse toggler={"#toggler"+list.id}>
                                 <ListItem list={list}/>
