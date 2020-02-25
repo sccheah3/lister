@@ -32,7 +32,7 @@ class ListSerializer(serializers.HyperlinkedModelSerializer):
     def update(self, instance, validated_data):
 
         parent_list = validated_data.get('parent_list', instance.parent_list)
-        if self.is_cyclic_relationship(parent_list.pk, instance.pk):
+        if parent_list and self.is_cyclic_relationship(parent_list.id, instance.id):
             return instance
 
         instance.parent_list = validated_data.get('parent_list', instance.parent_list)
