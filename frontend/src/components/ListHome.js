@@ -23,6 +23,14 @@ const ListHome = (props) => {
         getLists();
     };
 
+    function deleteList(url) {
+        axios.delete(url, { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
+            .then(res => getLists())
+            .catch(err => console.log(err));
+    }
+
+
+
     useEffect(() => getLists(), []);
 
 
@@ -35,7 +43,7 @@ const ListHome = (props) => {
                     <li>
                         <div className="task">
                             {list.title}
-                            <Button color="danger">Delete</Button>
+                            <Button color="danger" onClick={() => deleteList(list.url)}>Delete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>Expand</Button>
                             <UncontrolledCollapse toggler={"#toggler"+list.id}>
                                 <ListItem list={list}/>
