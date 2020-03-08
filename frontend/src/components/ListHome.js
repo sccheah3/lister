@@ -48,8 +48,10 @@ const ListHome = (props) => {
                 { lists.map(list =>
                 <Fragment key={list.id}>
                     <li>
-                        <div className="task" style={{ textDecoration: list.is_complete ? "line-through" : ""}}>
-                            {list.title}
+                        <div className="task">
+                            <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block"}}>
+                                {list.title}
+                            </div>
                             <Button color="danger" onClick={() => deleteList(list.url)}>Delete</Button>
                             <Button color="primary" onClick={() => completeTask(list)}>Complete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>Expand</Button>

@@ -1,3 +1,6 @@
+issue: clicking complete on parent also follows through with children
+refactor
+
 1. add functionality to add parent, editing and deleting functionality
     - add views to see all, completed, and active lists
 2. eventually add batch add/delete/edits and save button instead of constantly posting/getting for each item
