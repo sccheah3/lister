@@ -17,13 +17,15 @@ function Login(props) {
 
 
   function postLogin() {
-    // console.log(userName);
-    // console.log(password);
+    //alert(userName);
+    //alert(password);
     axios.post("http://127.0.0.1:8000/accounts/auth/login/", {
       "username": userName,
       "password": password
     }).then(result => {
+        //alert("REACH HERE")
       if (result.status === 200) {
+        //alert("result.status == 200")
         setAuthTokens(result.data);
         setLoggedIn(true);
       } else {
@@ -38,6 +40,13 @@ function Login(props) {
     return <Redirect to={referer} />;
   }
 
+  function enterPressed(event) {
+    var code = event.keycode || event.which;
+    if (code === 13) {
+        postLogin();
+    }
+  }
+
   return (
     <Card>
       <Logo src={logoImg} />
@@ -48,6 +57,7 @@ function Login(props) {
           onChange={e => {
             setUserName(e.target.value);
           }}
+          onKeyPress={enterPressed}
           placeholder="username"
         />
         <Input
@@ -56,6 +66,7 @@ function Login(props) {
           onChange={e => {
             setPassword(e.target.value);
           }}
+          onKeyPress={enterPressed}
           placeholder="password"
         />
         <Button onClick={postLogin}>Sign In</Button>
