@@ -42,7 +42,8 @@ class NewListItemForm extends Component {
     render() {
         return (
             <div className="create-task">
-            <form onSubmit={this.handleSubmit}>
+            <form autoComplete="off" onSubmit={this.handleSubmit}>
+                <input type="hidden" autoComplete="off" />
                 <input type="text" className="input" name="title" value={this.state.title} onChange={this.handleChange} placeholder="Add a new task"/>
             </form>
             </div>
