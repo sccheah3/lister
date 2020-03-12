@@ -1,3 +1,6 @@
+feature: agenda style, ability to create multiple sets of lists, ability to copy lists over
+
+
 issue: clicking complete on parent also follows through with children
 refactor
 
