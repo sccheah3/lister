@@ -26,6 +26,7 @@ function Login(props) {
         //alert("REACH HERE")
       if (result.status === 200) {
         //alert("result.status == 200")
+        //console.log(JSON.stringify(result.data));
         setAuthTokens(result.data);
         setLoggedIn(true);
       } else {
