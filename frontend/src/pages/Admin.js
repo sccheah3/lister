@@ -10,8 +10,7 @@ function Admin(props) {
   }
 
   return (
-    <div>
-      <div>Admin Page</div>
+    <div style={{marginRight: "40%", marginLeft: "40%", minWidth: "100px"}}>
       <Button onClick={logOut}>Log out</Button>
     </div>
   );
