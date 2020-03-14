@@ -44,12 +44,12 @@ const ListItem = (props) => {
                 <Fragment key={list.id}>
                     <li>
                         <div className="task">
-                            <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block"}}>
-                                {list.title}
-                            </div>
                             <Button color="danger" onClick={() => deleteList(list.url)}>Delete</Button>
                             <Button color="primary" onClick={() => completeTask(list)}>Complete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBotton: '1rem' }}>Expand</Button>
+                            <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block"}}>
+                                <p>{list.title}</p>
+                            </div>
                             <UncontrolledCollapse toggler={"#toggler"+list.id}>
                                 <ListItem list={list}/>
                             </UncontrolledCollapse>

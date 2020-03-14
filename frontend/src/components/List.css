@@ -10,6 +10,7 @@ body {
       padding: 20px 10px;
       color: white;
       border: 3px solid rgb(36, 110, 194);
+      word-break:break-all;
     }
 
     .todo-container-nested {
@@ -19,6 +20,7 @@ body {
       padding: 20px 10px;
       color: white;
       border: 3px solid rgb(36, 110, 194);
+      word-break:break-all;
     }
 
     .task {
