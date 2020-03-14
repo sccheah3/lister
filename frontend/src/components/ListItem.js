@@ -22,6 +22,9 @@ const ListItem = (props) => {
     }
 
     function deleteList(url) {
+        if (window.confirm("Delete this item?") === false)
+            return;
+
         axios.delete(url, { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
             .then(res => getLists())
             .catch(err => console.log(err));
