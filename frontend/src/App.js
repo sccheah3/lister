@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 //import Home from "./pages/Home";
-import Admin from "./pages/Admin";
+import Profile from "./pages/Profile";
 
 import PrivateRoute from "./pages/PrivateRoute";
 
@@ -36,13 +35,13 @@ function App(props) {
                         <Link to="/">Lists</Link>
                     </li>
                     <li>
-                        <Link to="/admin">Admin Page</Link>
+                        <Link to="/profile">Profile</Link>
                     </li>
                 </ul>
                 <PrivateRoute exact path="/" component={ListHome} />
                 <Route path="/login" component={Login} />
                 <Route path="/signup" component={Signup} />
-                <PrivateRoute path="/admin" component={Admin} />
+                <PrivateRoute path="/profile" component={Profile} />
             </div>
         </Router>
     </AuthContext.Provider>

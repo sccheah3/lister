@@ -1,13 +1,10 @@
-body {
-      background: rgb(255, 173, 65);
-    }
-
     .todo-container {
       background: rgb(41, 33, 33);
       width: 40vw;
-      margin: 10em auto;
+      min-width: 290px;
+      margin: 2em auto auto 0em;
       border-radius: 15px;
-      padding: 20px 10px;
+      padding: 20px 10px 20px;
       color: white;
       border: 3px solid rgb(36, 110, 194);
       word-break:break-all;
