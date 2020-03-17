@@ -42,6 +42,14 @@ function Login() {
     return <Redirect to="/" />;
   }
 
+  function enterPressed(event) {
+    var code = event.keycode || event.which;
+    if (code === 13) {
+        postSignup();
+    }
+  }
+
+
   return (
     <Card>
       <Logo src={logoImg} />
@@ -52,6 +60,7 @@ function Login() {
           onChange={e => {
             setUserName(e.target.value);
           }}
+          onKeyPress={enterPressed}
           placeholder="username"
         />
         <Input
@@ -60,6 +69,7 @@ function Login() {
           onChange={e => {
             setPassword(e.target.value);
           }}
+          onKeyPress={enterPressed}
           placeholder="password"
         />
         <Input
@@ -68,11 +78,12 @@ function Login() {
           onChange={e => {
             setConfirmPassword(e.target.value);
           }}
+          onKeyPress={enterPressed}
           placeholder="confirm password"
         />
-        <Button onClick={handleSubmit}>Sign In</Button>
+        <Button onClick={handleSubmit}>Create Account</Button>
       </Form>
-      <Link to="/signup">Don't have an account?</Link>
+      <Link to="/login">Have an account? Sign in!</Link>
         { isError &&<Error>Error! Good luck!</Error> }
     </Card>
   );
