@@ -56,8 +56,8 @@ const ListHome = (props) => {
                             <Button color="danger" onClick={() => deleteList(list.url)}>Delete</Button>
                             <Button color="primary" onClick={() => completeTask(list)}>Complete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>+/-</Button>
-                            <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block"}}>
-                                <p>{list.title}</p>
+                            <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block", color: "red" }}>
+                                <p style={{ color: "white" }}>{list.title}</p>
                             </div>
                             <UncontrolledCollapse toggler={"#toggler"+list.id}>
                                 <ListItem list={list}/>
