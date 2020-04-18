@@ -1,4 +1,8 @@
-feature: ability to move and change order of lists, expand/minimize all button, change strikethrough color to make it more visible
+issues:
+    - needs to redirect to login page when token expires. 401 unauth response from server
+    - sometimes routes to ListHome page even though token is undefined
+
+feature:
     -agenda style, ability to create multiple sets of lists, ability to copy lists over
 
 

@@ -11,6 +11,7 @@ import "./List.css"
 const ListHome = (props) => {
 
     const [lists, setList] = useState([])
+    console.log(localStorage)
 
 //JSON.parse(localStorage.getItem('tokens'))['token']
     function getLists() {

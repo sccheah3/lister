@@ -1,9 +1,8 @@
 import React, { useState, Fragment } from "react";
 import { UncontrolledCollapse, Button } from "reactstrap";
 
-import axios from "axios";
-import { LIST_API_URL } from "../constants/urls";
 import NewListItemForm from "./NewListItemForm";
+import { getLists, deleteList, completeTask } from "./api";
 
 import "./List.css"
 
@@ -11,33 +10,9 @@ const ListItem = (props) => {
 
     const [list, setList] = useState(props.list)
 
-    function getLists() {
-        axios.get(LIST_API_URL + list.id + "/", { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
-             .then(res => setList(res.data ))
-             .catch(err => console.log(err));
-    };
-
     function resetState() {
-        getLists();
+        getLists(list, setList);
     }
-
-    function deleteList(url) {
-        if (window.confirm("Delete this item?") === false)
-            return;
-
-        axios.delete(url, { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
-            .then(res => getLists())
-            .catch(err => console.log(err));
-    }
-
-    function completeTask(list) {
-        list["is_complete"] = !list.is_complete
-        axios.put(list.url, list, { headers: { 'Authorization': `Token ${JSON.parse(localStorage.getItem('tokens'))['token']}` }})
-             .then(res => console.log(res))
-             .then(() => resetState())
-             .catch(err => console.log(err));
-    }
-
 
     return (
         <ul>
@@ -47,8 +22,8 @@ const ListItem = (props) => {
                 <Fragment key={list.id}>
                     <li>
                         <div className="task">
-                            <Button color="danger" onClick={() => deleteList(list.url)}>Delete</Button>
-                            <Button color="primary" onClick={() => completeTask(list)}>Complete</Button>
+                            <Button color="danger" onClick={() => deleteList(list.url, setList)}>Delete</Button>
+                            <Button color="primary" onClick={() => completeTask(list, setList)}>Complete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBotton: '1rem' }}>+/-</Button>
                             <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block", color: "red" }}>
                                 <p style={{ color: "white" }}>{list.title}</p>
