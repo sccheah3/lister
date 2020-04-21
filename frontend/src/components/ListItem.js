@@ -4,7 +4,7 @@ import { UncontrolledCollapse, Button } from "reactstrap";
 import NewListItemForm from "./NewListItemForm";
 import { getLists, deleteList, completeTask } from "./api";
 
-import "./List.css"
+import "./List.css";
 
 const ListItem = (props) => {
 
