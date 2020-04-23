@@ -9,9 +9,10 @@ import "./List.css";
 const ListItem = (props) => {
 
     const [list, setList] = useState(props.list)
+    const root_list_id = props.list.id;
 
     function resetState() {
-        getLists(list, setList);
+        getLists(setList, list.id);
     }
 
     return (
@@ -22,8 +23,8 @@ const ListItem = (props) => {
                 <Fragment key={list.id}>
                     <li>
                         <div className="task">
-                            <Button color="danger" onClick={() => deleteList(list.url, setList)}>Delete</Button>
-                            <Button color="primary" onClick={() => completeTask(list, setList)}>Complete</Button>
+                            <Button color="danger" onClick={() => deleteList(setList, list.url, root_list_id)}>Delete</Button>
+                            <Button color="primary" onClick={() => completeTask(list, setList, root_list_id)}>Complete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBotton: '1rem' }}>+/-</Button>
                             <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block", color: "red" }}>
                                 <p style={{ color: "white" }}>{list.title}</p>

@@ -12,10 +12,10 @@ const ListHome = (props) => {
     const [lists, setList] = useState([])
 
     function resetState() {
-        getLists(lists, setList);
+        getLists(setList, "?is_root=true");
     };
 
-    useEffect(() => getLists(lists, setList), []);
+    useEffect(() => getLists(setList, "?is_root=true"), []);
 
     return (
         <ul>
@@ -25,8 +25,8 @@ const ListHome = (props) => {
                 <Fragment key={list.id}>
                     <li>
                         <div className="task">
-                            <Button color="danger" onClick={() => deleteList(list.url, setList)}>Delete</Button>
-                            <Button color="primary" onClick={() => completeTask(list, setList)}>Complete</Button>
+                            <Button color="danger" onClick={() => deleteList(setList, list.url, "?is_root=true")}>Delete</Button>
+                            <Button color="primary" onClick={() => completeTask(list, setList, "?is_root=true")}>Complete</Button>
                             <Button color="primary" id={"toggler"+list.id} style={{ marginBottom: '1rem' }}>+/-</Button>
                             <div style={{ textDecoration: list.is_complete ? "line-through" : "", display: "inline-block", color: "red" }}>
                                 <p style={{ color: "white" }}>{list.title}</p>

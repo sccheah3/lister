@@ -1,13 +1,8 @@
-issues:
-    - needs to redirect to login page when token expires. 401 unauth response from server
-    - sometimes routes to ListHome page even though token is undefined
+comment code and write documentation
+deploy app
 
-feature:
-    -agenda style, ability to create multiple sets of lists, ability to copy lists over
-
-
-issue: clicking complete on parent also follows through with children
-refactor
+features to add:
+    -agenda style, ability to create multiple sets of lists, ability to copy lists over, dark theme
 
 1. add functionality to add parent, editing and deleting functionality
     - add views to see all, completed, and active lists
@@ -16,6 +11,3 @@ refactor
 -read up promises, axios, setstate, asynchronous/synchronous
         https://stackoverflow.com/questions/54261535/cant-get-react-component-to-update-after-setting-state-after-axios-call
 -hooks
-
-Note: able to make request with filter with "http://127.0.0.1:8000/api/lists/?title=title2"
-    Need to find out how to filter by null for parent_list. Also see if we can have multiple filters on single view
