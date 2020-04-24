@@ -7,6 +7,7 @@ features to add:
 1. add functionality to add parent, editing and deleting functionality
     - add views to see all, completed, and active lists
 2. eventually add batch add/delete/edits and save button instead of constantly posting/getting for each item
+3. write test code
 
 -read up promises, axios, setstate, asynchronous/synchronous
         https://stackoverflow.com/questions/54261535/cant-get-react-component-to-update-after-setting-state-after-axios-call
