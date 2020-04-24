@@ -9,18 +9,14 @@ import "./List.css";
 
 const ListHome = (props) => {
 
-    const [lists, setList] = useState([])
-
-    function resetState() {
-        getLists(setList, "?is_root=true");
-    };
+    const [lists, setList] = useState([]);
 
     useEffect(() => getLists(setList, "?is_root=true"), []);
 
     return (
         <ul>
             <div className="todo-container">
-                <li><NewListItemForm resetState={resetState}/></li>
+                <li><NewListItemForm setList={setList} query="?is_root=true"/></li>
                 { lists.map(list =>
                 <Fragment key={list.id}>
                     <li>

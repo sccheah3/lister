@@ -2,7 +2,7 @@ import React, { useState, Fragment } from "react";
 import { UncontrolledCollapse, Button } from "reactstrap";
 
 import NewListItemForm from "./NewListItemForm";
-import { getLists, deleteList, completeTask } from "./api";
+import { deleteList, completeTask } from "./api";
 
 import "./List.css";
 
@@ -11,14 +11,10 @@ const ListItem = (props) => {
     const [list, setList] = useState(props.list)
     const root_list_id = props.list.id;
 
-    function resetState() {
-        getLists(setList, list.id);
-    }
-
     return (
         <ul>
             <div className="todo-container-nested">
-                <li><NewListItemForm parent_url={list.url} resetState={resetState}/></li>
+                <li><NewListItemForm parent_url={list.url} setList={setList} query={root_list_id}/></li>
                 { list.tasks.map(list =>
                 <Fragment key={list.id}>
                     <li>
