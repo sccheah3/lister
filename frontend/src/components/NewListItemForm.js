@@ -21,7 +21,7 @@ class NewListItemForm extends Component {
     }
 
     handleSubmit(event) {
-        console.log(this.props.state);
+        console.log(this.state);
         postList(this.state, this.props.setList, this.props.query);
         this.setState({
             parent: '',
