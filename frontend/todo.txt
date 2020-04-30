@@ -1,3 +1,5 @@
+ISSUE: live site has issue with adding subtasks; tokens are not saved on refresh - safari
+
 comment code and write documentation
 deploy app
 
