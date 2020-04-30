@@ -7,4 +7,4 @@ class ListFilter(django_filters.FilterSet):
 
 	class Meta:
 		model = List
-		fields = ['parent_list', 'is_root', 'title', 'detail']
+		fields = ['parent_list', 'is_root', 'title']
