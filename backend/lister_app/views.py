@@ -17,7 +17,7 @@ class ListViewSet(viewsets.ModelViewSet):
 
 	filter_backends = [DjangoFilterBackend, filters.SearchFilter]
 	filterset_class = ListFilter
-	search_fields = ['title', 'detail']
+	search_fields = ['title']
 
 	permission_classes = [permissions.IsAuthenticated, IsOwnerOrAdmin]
 
