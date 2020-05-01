@@ -1,4 +1,4 @@
-# Just Another To-Do List ![Recursive Notepad](https://github.com/sccheah3/lister/just_another_todo_list.png)
+# Just Another To-Do List ![Recursive Notepad](https://github.com/sccheah3/lister/blob/master/just_another_todo_list.png)
 
 You guessed it, this project is Just Another To-Do List. Please bear with me while I talk about why this project is worth looking into.
 
