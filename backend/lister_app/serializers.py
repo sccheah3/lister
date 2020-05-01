@@ -8,7 +8,7 @@ class ListSerializer(serializers.HyperlinkedModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     class Meta:
         model = List
-        fields = ['url', 'id', 'owner', 'parent_list', 'title', 'detail', 'tasks', 'is_complete', 'modified_at']
+        fields = ['url', 'id', 'owner', 'parent_list', 'title', 'tasks', 'is_complete', 'modified_at']
         read_only_fields = ['tasks']
 
 
