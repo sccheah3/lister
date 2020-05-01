@@ -1,4 +1,4 @@
-![Recursive Notepad](https://github.com/sccheah3/lister/blob/master/just_another_todo_list.png)
+![Recursive Notepad](https://github.com/sccheah3/lister/blob/master/just_another_todo_list.png | width=24)
 
 # Just Another To-Do List 
 
