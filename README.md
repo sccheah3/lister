@@ -2,7 +2,11 @@
 
 ![Recursive Notepad](https://github.com/sccheah3/lister/blob/master/just_another_todo_list.png)
 
-You guessed it, this project is Just Another To-Do List. Please bear with me while I talk about why this project is worth looking into.
+You guessed it, this project is Just Another To-Do List.
+
+*TL;DR: App is a To-Do list with virtually infinite sublists. Backend uses Django Rest Framework. Frontend uses React. Features include user token authentication, searching, filtering, and loop-detection.*
+
+Technologies Used: Django Rest Framework, React.js, Nginx, and Gunicorn
 
 
 ## Motivation
