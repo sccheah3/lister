@@ -4,7 +4,7 @@
 
 You guessed it, this project is Just Another To-Do List.
 
-*TL;DR: App is a To-Do list with virtually infinite sublists. Backend uses Django Rest Framework. Frontend uses React. Features include user token authentication, searching, filtering, and loop-detection.*
+*TL;DR: App is a To-Do list with virtually infinite sublists. Backend uses Django Rest Framework. Frontend uses React. Features include user token authentication, searching, filtering, and cycle-detection.*
 
 Technologies Used: Django Rest Framework, React.js, Nginx, and Gunicorn
 
