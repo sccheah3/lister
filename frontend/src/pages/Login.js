@@ -19,7 +19,7 @@ function Login(props) {
   function postLogin() {
     //alert(userName);
     //alert(password);
-    axios.post("http://api.just-another-todo-list.stanleycheah.tech/accounts/auth/login/", {
+    axios.post("https://api.just-another-todo-list.stanleycheah.tech/accounts/auth/login/", {
       "username": userName,
       "password": password
     }).then(result => {

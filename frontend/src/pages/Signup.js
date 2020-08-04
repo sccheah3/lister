@@ -14,7 +14,7 @@ function Login() {
   const { setAuthTokens } = useAuth();
 
   function postSignup() {
-    axios.post("http://api.just-another-todo-list.stanleycheah.tech/accounts/auth/register/", {
+    axios.post("https://api.just-another-todo-list.stanleycheah.tech/accounts/auth/register/", {
       "username": userName,
       "password": password
     }).then(result => {

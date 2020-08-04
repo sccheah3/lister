@@ -1,1 +1,1 @@
-export const LIST_API_URL = "http://api.just-another-todo-list.stanleycheah.tech/lister/api/lists/"
+export const LIST_API_URL = "https://api.just-another-todo-list.stanleycheah.tech/lister/api/lists/"
