@@ -56,7 +56,8 @@ export function deleteList(setList, url, query) {
 
 	if (window.confirm("Delete this item?") === false)
         return;
-
+	
+    url = url.replace("http", "https");
     axios.delete(url, { headers: { 'Authorization': `Token ${token}` }})
          .then(res => getLists(setList, query))
          .catch(err => {
@@ -80,7 +81,9 @@ export function completeTask(list, setList, query) {
     }    
 
 
-	list["is_complete"] = !list.is_complete;
+    list["is_complete"] = !list.is_complete;
+    var url = list.url;
+    url = url.replace("http", "https");
     axios.put(list.url, list, { headers: { 'Authorization': `Token ${token}` }})
          .then(res => console.log(res))
          .then(() => getLists(setList, query))
